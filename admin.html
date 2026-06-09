@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Control Sakura 💗</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+  <canvas id="fxCanvas"></canvas>
+
+  <main class="admin-wrap">
+    <section id="loginBox" class="admin-card glass">
+      <h1>Admin Control 💗🌸</h1>
+      <p>Masuk dulu kang. Default password: <b>sakura</b></p>
+      <input id="adminPassword" type="password" placeholder="Password admin" />
+      <button id="loginBtn" class="primary-btn">Login</button>
+    </section>
+
+    <section id="panelBox" class="admin-card glass hidden">
+      <div class="admin-head">
+        <div>
+          <h1>Admin Control 💗🌸</h1>
+          <p>Edit isi web tanpa coding ulang. Data bisa tersimpan online kalau Supabase sudah disambungkan.</p>
+        </div>
+        <a class="ghost-link" href="index.html">Open Web</a>
+      </div>
+
+      <details open>
+        <summary>🌸 Main Page</summary>
+        <label>Judul utama</label>
+        <input id="mainTitleInput" />
+        <label>Pesan pembuka</label>
+        <textarea id="mainMessageInput" rows="6"></textarea>
+        <label>Lagu halaman utama</label>
+        <input id="homeMusicInput" type="file" accept="audio/*" />
+      </details>
+
+      <details open>
+        <summary>💌 Letters</summary>
+        <div id="letterEditor"></div>
+        <button id="addLetterBtn" class="secondary-btn">+ Tambah Surat</button>
+      </details>
+
+      <details>
+        <summary>📸 Gallery</summary>
+        <label>Upload foto gallery</label>
+        <input id="galleryInput" type="file" accept="image/*" multiple />
+        <div id="galleryEditor" class="gallery-editor"></div>
+      </details>
+
+      <details>
+        <summary>🎨 Theme & Effects</summary>
+        <label>Tema warna</label>
+        <select id="themeSelect">
+          <option value="soft">Soft Pink Sakura</option>
+          <option value="rose">Rose Romantic</option>
+          <option value="night">Night Pink</option>
+        </select>
+
+        <label>Tanggal ulang tahun / tanggal spesial</label>
+        <input id="specialDateInput" type="date" />
+
+        <label>Ending title</label>
+        <input id="endingTitleInput" />
+
+        <label>Ending message</label>
+        <textarea id="endingMessageInput" rows="4"></textarea>
+
+        <label>
+          <input id="petalsToggle" type="checkbox" />
+          Efek sakura jatuh
+        </label>
+        <label>
+          <input id="heartsToggle" type="checkbox" />
+          Efek hati saat klik
+        </label>
+        <label>
+          <input id="sparkleToggle" type="checkbox" />
+          Efek sparkle
+        </label>
+      </details>
+
+      <details>
+        <summary>🔒 Admin Password</summary>
+        <label>Ganti password admin</label>
+        <input id="newPasswordInput" placeholder="Password baru" />
+      </details>
+
+      <div class="admin-actions">
+        <button id="saveBtn" class="primary-btn">Save Changes 💾</button>
+        <button id="resetBtn" class="danger-btn">Reset Default</button>
+      </div>
+      <p id="saveStatus"></p>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="database.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

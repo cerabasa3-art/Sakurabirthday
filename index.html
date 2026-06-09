@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Sakura 💗🌸</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="fxCanvas"></canvas>
+
+  <div id="loadingScreen" class="screen active">
+    <div class="loader-card glass">
+      <div class="big-flower">🌸</div>
+      <h1>Preparing something special...</h1>
+      <p>For Sakura, the prettiest flower in my world 💗</p>
+      <div class="progress"><span></span></div>
+    </div>
+  </div>
+
+  <main id="app" class="hidden">
+    <section id="home" class="screen page active">
+      <div class="hero glass">
+        <p class="mini">🌸 A little surprise for you 🌸</p>
+        <h1 id="mainTitle">Happy Birthday Sakura 💗🌸</h1>
+        <p id="mainMessage" class="hero-text"></p>
+        <button class="primary-btn" id="openLettersBtn">💌 Open My Letters</button>
+      </div>
+    </section>
+
+    <section id="letters" class="screen page">
+      <div class="topbar">
+        <button class="ghost-btn" data-goto="home">← Home</button>
+        <button class="ghost-btn" id="toggleMusicBtn">🎵 Music</button>
+      </div>
+      <div class="section-head glass">
+        <h2>Letters For You 💌🌸</h2>
+        <p>Tap one envelope, Sayang 🥹💗</p>
+      </div>
+      <div id="letterGrid" class="letter-grid"></div>
+    </section>
+
+    <section id="letterReader" class="screen page">
+      <div class="topbar">
+        <button class="ghost-btn" data-goto="letters">← Letters</button>
+        <button class="ghost-btn" id="nextLetterBtn">Next 💗</button>
+      </div>
+      <article class="letter-paper glass">
+        <h2 id="readerTitle"></h2>
+        <div id="readerBody"></div>
+      </article>
+    </section>
+
+    <section id="gallery" class="screen page">
+      <div class="topbar">
+        <button class="ghost-btn" data-goto="letters">← Letters</button>
+        <button class="ghost-btn" data-goto="ending">Ending 💗</button>
+      </div>
+      <div class="section-head glass">
+        <h2>Our Memories 📸💗</h2>
+        <p id="gallerySubtitle">Every little moment with you feels special 🌸</p>
+      </div>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+
+    <section id="ending" class="screen page">
+      <div class="ending-card glass">
+        <h1 id="endingTitle">Thank you for being born 🌸💗</h1>
+        <p id="endingMessage"></p>
+        <div id="countdownBox" class="countdown"></div>
+        <button class="primary-btn" data-goto="home">Back to Start 🌸</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="bgAudio" preload="auto" loop></audio>
+
+  <div id="tapHint" class="tap-hint">
+    Tap once to allow music 🎵
+  </div>
+
+  <script src="data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="database.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
